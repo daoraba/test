@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 
@@ -9,8 +7,8 @@ use App\Nombres;
 
 class UsersTest extends TestCase
 {
-    //para desactivar la verificacion del token desactivando el middleware usando este trait
-    use WithoutMiddleware;
+    //Activar este trait para ejecutar las pruebas dentro de una transaccion de la DB
+    use DatabaseTransactions;
 
     public function test_lista_nombres()
     {
@@ -32,10 +30,10 @@ class UsersTest extends TestCase
             ->click('crear nombre')
             ->seePageIs('nombres/crear')
             ->see('crear nombre')
-            ->type('un nombre', 'nombre')
+            ->type('Otro', 'nombre')
             ->press('crear nombre')
             ->seePageIs('nombres')
-            ->see('un nombre')
+            ->see('Otro')
             ->seeInDatabase('nombres',[
                 'nombre' => 'Otro'
             ]);
