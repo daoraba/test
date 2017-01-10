@@ -21,7 +21,6 @@ class CreateNombresTable extends Migration
         Schema::create('nombres', function (Blueprint $table) {
             $table->increments('id');
             $table->mediumText('nombre');
-            $table->unsignedInteger('id_categoria')->nullable()->index();
             $table->timestamps(); //created_at, updated_at
         });
     }

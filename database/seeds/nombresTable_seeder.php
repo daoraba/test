@@ -1,5 +1,7 @@
 <?php
 
+use App\Categoria;
+use App\Nombres;
 use Illuminate\Database\Seeder;
 
 class nombresTable_seeder extends Seeder
@@ -11,7 +13,15 @@ class nombresTable_seeder extends Seeder
      */
     public function run()
     {
+        $categorias= Categoria::all();
         //cargar el metodo de la factoria que queremos usar
-        factory(\App\Nombres::class)->times(100)->create();
+        $nombres = factory(Nombres::class)->times(100)->make();
+
+        foreach ($nombres as $nombre){
+            $c=$categorias->random();
+
+                $c->nombres()->save($nombre);
+
+        }
     }
 }

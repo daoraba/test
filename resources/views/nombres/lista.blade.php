@@ -5,10 +5,11 @@
     <p>
         <a href="{{url('nombres/crear')}}">crear nombre</a>
     </p>
-    <ul>
+    <ul class="list-group">
         @foreach ($nombres as $nombre)
-        <li>
-            {{ $nombre->nombre }}
+        <li class="list-group-item">
+             <label class="label label-info"> {{$nombre->categoria->nombre_c }}</label>
+            {{$nombre->nombre }}
         </li>
         @endforeach
     </ul>
@@ -16,7 +17,6 @@
     <!--csrf_fields() sirve para proteger los datos que enviamos-->
     <!--
     <form method="post">
-        {!! csrf_field() !!}
         <textarea></textarea>
         <button type="submit">crear nombre</button>
 
