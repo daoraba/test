@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         // $this->call('UserTableSeeder');
-
+        //para ejecutar los seeders: php artisan db:seed
+        $this->call(nombresTable_seeder::class);
         Model::reguard();
     }
 }

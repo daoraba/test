@@ -12,6 +12,7 @@
         </li>
         @endforeach
     </ul>
+    {!! $nombres->render() !!}
     <!--csrf_fields() sirve para proteger los datos que enviamos-->
     <!--
     <form method="post">

@@ -12,7 +12,7 @@ class NombresController extends Controller
 {
     public function index()
     {
-            $nombres=\App\Nombres::all();
+            $nombres=\App\Nombres::paginate(20);
             return view('nombres/lista', compact('nombres'));
     }
 

@@ -19,3 +19,11 @@ $factory->define(App\User::class, function ($faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+//Sirve para crear registros aleatorios. Definimos el modelo de factoria que queramos hacer
+$factory->define(App\Nombres::class, function (Faker\Generator $faker){
+
+    return [
+        'nombre' => $faker->name
+    ];
+});
