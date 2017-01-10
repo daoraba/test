@@ -1,8 +1,6 @@
 <?php
-
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class AddCategoriasNombres extends Migration
 {
     /**
@@ -16,7 +14,6 @@ class AddCategoriasNombres extends Migration
             $table->unsignedInteger('categoria_id')->nullable()->index()->after('nombre');
         });
     }
-
     /**
      * Reverse the migrations.
      *
